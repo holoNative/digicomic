@@ -1,0 +1,55 @@
+{
+  "name": "digicomic",
+  "version": "1.0.0",
+  "description": "Ein Comic Book Reader mit integrierten Comics, die fürs Smartphone angepasst und somit ideal für unterwegs sind.",
+  "productName": "digicomic",
+  "author": "holoNative",
+  "private": true,
+  "scripts": {
+    "dev": "quasar dev",
+    "dev:pwa": "quasar dev -m pwa",
+    "build": "quasar build NODE_OPTIONS=--max-old-space-size=4096",
+    "build:pwa": "quasar build -m pwa",
+    "lint": "eslint --ext .js,.vue ./",
+    "test": "echo \"No test specified\" && exit 0",
+    "rename-files": "node ./util-scripts/rename-files",
+    "create-comic-data": "node ./util-scripts/create-comic-data"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.12.2",
+    "core-js": "^3.20.0",
+    "focus-visible": "^5.2.0",
+    "node-webvtt": "^1.9.3",
+    "quasar": "^2.3.4",
+    "swiper": "^6.8.4",
+    "video.js": "^7.17.3"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.16.5",
+    "@quasar/app": "^3.2.5",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-vue": "^7.20.0",
+    "eslint-webpack-plugin": "^2.6.0",
+    "terser-webpack-plugin": "^5.3.0"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}

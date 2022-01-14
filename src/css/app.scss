@@ -1,0 +1,109 @@
+/* 
+* Copyright (C) 2021 holoNative GbR
+*
+* @Author: Dennis Przytarski, holoNative
+* @Email: dennis@holonative.de
+*
+* @License:
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* any later version.
+
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+
+* You should have received a copy of the GNU General Public License
+* along with this program (see LICENSE file in root).
+* If not, see https://www.gnu.org/licenses/.
+*
+* @Description:
+* App global css in SCSS form
+*/
+
+html, body {
+  background-color: $background;
+  font-family: 'Eau Sans', Montserrat, sans-serif;
+}
+
+a {
+  color: #fff
+}
+
+/* import Eau Sans font family */
+@font-face {
+  font-family: 'Eau Sans';
+  font-style: normal;
+  font-weight: 900;
+  src: url('./fonts/eau_sans_black.woff') format('woff');
+}
+@font-face {
+  font-family: 'Eau Sans Lining';
+  font-style: normal;
+  font-weight: 900;
+  src: url('./fonts/eau_sans_black_lng.woff') format('woff');
+}
+@font-face {
+  font-family: 'Eau Sans Lining';
+  font-style: oblique;
+  font-weight: 900;
+  src: url('./fonts/eau_sans_black_lng_obl.woff') format('woff');
+}
+@font-face {
+  font-family: 'Eau Sans';
+  font-style: oblique;
+  font-weight: 900;
+  src: url('./fonts/eau_sans_black_obl.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Eau Sans';
+  font-style: normal;
+  font-weight: bold;
+  src: url('./fonts/eau_sans_bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Eau Sans Lining';
+  font-style: normal;
+  font-weight: bold;
+  src: url('./fonts/eau_sans_bold_lng.woff') format('woff');
+}
+@font-face {
+  font-family: 'Eau Sans Lining';
+  font-style: oblique;
+  font-weight: bold;
+  src: url('./fonts/eau_sans_bold_lng_obl.woff') format('woff');
+}
+@font-face {
+  font-family: 'Eau Sans';
+  font-style: oblique;
+  font-weight: bold;
+  src: url('./fonts/eau_sans_bold_obl.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Eau Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./fonts/eau_sans_book.woff') format('woff');
+}
+@font-face {
+  font-family: 'Eau Sans Book Lining';
+  font-style: oblique;
+  font-weight: normal;
+  src: url('./fonts/eau_sans_book_lin_obl.woff') format('woff');
+}
+@font-face {
+  font-family: 'Eau Sans Book Lining';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./fonts/eau_sans_book_lng.woff') format('woff');
+}
+@font-face {
+  font-family: 'Eau Sans';
+  font-style: oblique;
+  font-weight: normal;
+  src: url('./fonts/eau_sans_book_obl.woff') format('woff');
+}
