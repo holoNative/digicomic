@@ -26,7 +26,7 @@
 */
 
 <template>
-  <div id="index-wrapper">
+  <div v-if="!isProd" id="index-wrapper">
     <h2 class="text-center">
       Digitale Comics
     </h2>
@@ -86,6 +86,12 @@ export default {
       }
     }
   },
+  computed: {
+    isProd() {
+      return process.env.NODE_ENV === 'production'
+    }
+  },
+
   methods: {
     getPanelSource(comic, panelId) {
       return `${process.env.COMICS_DIR + comic.id}/images/${comic.panels[panelId].image}`

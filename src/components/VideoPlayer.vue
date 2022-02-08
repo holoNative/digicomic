@@ -119,8 +119,9 @@ export default {
     }
   },
   watch: {
-    panelId() {
-      if (!this.paused) return
+    panelId(newVal, oldVal) {
+      if (!oldVal || !this.paused) return
+      
       // set video time to corresponding panel time
       if (this.comic.video && this.comic.panels[this.panelId - 1] && this.comic.panels[this.panelId - 1].startTime) {
         this.setTime(this.comic.panels[this.panelId - 1].startTime)
