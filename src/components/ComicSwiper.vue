@@ -147,12 +147,32 @@ export default {
       }
     }
   },
+  methods: {
+    setActiveSlide(slideId) {
+      this.activeSlide = slideId ? slideId - 1 : 0
+      console.log('activeSlide activated', this.activeSlide)
+      
+      // go to correct panel with fix for fade effect bug
+      // (blank screen at beginning; slides wrongly positioned)
+      this.$nextTick(() => {
+        let fix = this.virtualData.slides[this.activeSlide + 1] ? 1 : -1
+        this.swiper.slideTo(this.activeSlide + fix, 0, false)
+        this.$nextTick(() => {
+          this.swiper.slideTo(this.activeSlide - fix, 0, false)
+          this.$emit('ready', this.swiper)
+        })
+      })
+    }
+  },
   mounted() {
     // push panels & credits panel in slides array with corresponding type
     for (let i = 1; i <= this.comic.panelsCount; i++) {
       this.slides.push({ type: 'panel', id: i })
     }
     this.slides.push({ type: 'credits', id: this.comic.panelsCount + 1 })
+
+    // set correct initial slide
+    this.setActiveSlide(this.panelId)
     
     // swiper settings
     // refer to the options in the docs: https://swiperjs.com/swiper-api
@@ -181,8 +201,8 @@ export default {
         renderExternal(data) {
           self.virtualData = data
         },
-        addSlidesBefore: 3,
-        addSlidesAfter: 3
+        addSlidesBefore: 2,
+        addSlidesAfter: 2
       },
       initialSlide: this.activeSlide,
       on: {
@@ -200,18 +220,7 @@ export default {
     })
   },
   activated() {
-    this.activeSlide = this.panelId ? this.panelId - 1 : 0
-    
-    // go to correct panel with fix for fade effect bug
-    // (blank screen at beginning; slides wrongly positioned)
-    this.$nextTick(() => {
-      let fix = this.virtualData.slides[this.activeSlide + 1] ? 1 : -1
-      this.swiper.slideTo(this.activeSlide + fix, 0, false)
-      this.$nextTick(() => {
-        this.swiper.slideTo(this.activeSlide - fix, 0, false)
-        this.$emit('ready', this.swiper)
-      })
-    })
+    this.setActiveSlide(this.panelId)
   }
 }
 </script>
