@@ -573,7 +573,7 @@ export default {
 
 <style scoped lang="scss">
 .overlay {
-  background-color: rgba(0,0,0,0.9);
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgb(0,0,0,0.9));
 }
 .overlay-zone {
   cursor: pointer;
@@ -583,10 +583,6 @@ export default {
   height: 25%;
   z-index: 1;
 /*   background-color: rgba(73,169,244,0.5); */ // for debug
-}
-
-#overlay-slider {
-  height: 20px;
 }
 
 #overlay-video-buttons-wrapper {
